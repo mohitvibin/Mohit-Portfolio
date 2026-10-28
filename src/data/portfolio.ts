@@ -39,7 +39,7 @@ export const profile = {
   resumePdf: '',
 
   portrait: {
-  src: '/pic.png',
+  src: '/hehe.jpg',
   srcSet: '',
   alt: 'Mohit Budhathoki',
 },
