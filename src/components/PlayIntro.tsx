@@ -14,7 +14,6 @@ export default function PlayIntro({
   onClose: () => void;
 }) {
   const [bootIndex, setBootIndex] = useState(0);
-  const [showCursor, setShowCursor] = useState(true);
 
   useEffect(() => {
     const previousOverflow = document.body.style.overflow;
@@ -34,16 +33,10 @@ export default function PlayIntro({
       );
     }, 850);
 
-    const cursorTimer = window.setInterval(() => {
-      setShowCursor((current) => !current);
-    }, 530);
-
     return () => {
       document.body.style.overflow = previousOverflow;
       window.removeEventListener('keydown', handleKey);
-      window.clearInterval(bootTimer);
-      window.clearInterval(cursorTimer);
-    };
+      window.clearInterval(bootTimer);    };
   }, [onClose]);
 
   return (

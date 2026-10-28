@@ -19,7 +19,7 @@ type NavbarProps = {
   onSwitch: (id: string) => void;
 };
 
-export default function Navbar({ order }: NavbarProps) {
+export default function Navbar(_props: NavbarProps) {
   const { scrollY } = useScroll();
 
   const [solid, setSolid] = useState(false);
@@ -77,11 +77,7 @@ export default function Navbar({ order }: NavbarProps) {
       offset: id === 'top' ? 0 : -64,
     });
   };
-
-  const links = (
-    ['about', 'projects', 'skills'] as SectionId[]
-  ).filter((id) => order.includes(id));
-
+  
   const navItems = [
     { id: 'top', label: 'Home' },
     { id: 'about', label: sectionMeta.about.nav },

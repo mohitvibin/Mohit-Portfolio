@@ -37,10 +37,11 @@ function Portfolio() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: EASE }}
       >
+  
         <Navbar
-          order={['about', 'experience', 'originals', 'skills', 'contact']}
+         order={['about', 'journey', 'originals', 'skills', 'story']}
           profileId="mohit"
-          onSwitch={() => {}}
+         onSwitch={() => {}}
         />
 
         <main>
@@ -150,14 +151,8 @@ function Portfolio() {
           </Scene>
 
           <Scene id="contact">
-            <FinalCTA
-              onReplay={() => {
-                window.scrollTo({
-                  top: 0,
-                  behavior: 'smooth',
-                });
-              }}
-            />
+            <FinalCTA />
+      
           </Scene>
         </main>
       </motion.div>
