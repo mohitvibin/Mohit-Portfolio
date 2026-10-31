@@ -4,9 +4,10 @@ import { EASE, SectionHeading, Tilt } from './fx';
 
 export default function About() {
   const facts = [
-{ k: 'Education', v: 'BSc (Honours) in Computing', s: `${education[0].school} · ${education[0].score}` },    { k: 'Training', v: `${experience[0].role}, ${experience[0].company}`, s: experience[0].period },
-    { k: 'Core Focus', v: 'Cyber Security', s: 'Digital Forensics & Network Defense' },
-    { k: 'Based in', v: profile.location, s: 'Nepal' },
+{ k: 'Education', v: 'Bachelor of Engineering (Honours) in Computing', s: `${education[0].school} · ${education[0].score}` },   { k: 'Based in', v: profile.location, s: 'Nepal' },
+ { k: 'Training', v: 'Network Technician', s: 'Lavish Technology Pvt. Ltd.' },
+  { k: 'Core Focus', v: 'Cyber Security', s: 'Digital Forensics & Network Defense' },
+    
   ];
 
   return (
@@ -30,8 +31,8 @@ export default function About() {
               sizes="(max-width: 1024px) 90vw, 40vw"
               alt={profile.portrait.alt}
               loading="lazy"
-              className="absolute bottom-0 left-1/2 h-[92%] w-auto max-w-none -translate-x-1/2 object-contain object-bottom"
-            />
+              className="absolute inset-0 h-full w-full object-cover object-top"            />
+
             <div className="absolute inset-x-0 bottom-0 h-1/3 bg-gradient-to-t from-black/90 to-transparent" />
             <div className="absolute bottom-5 left-5 right-5 flex items-end justify-between">
               <div>
@@ -52,15 +53,16 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 1, ease: EASE }}
           >
-           {profile.about}
+           {profile.about.split('\n\n').map((paragraph, index) => (
+             <span key={index} className="block mb-4 last:mb-0">
+               {paragraph}
+             </span>
+            ))}
           </motion.p>
 
 
           
-          <p className="mt-5 font-sans text-sm font-semibold tracking-wide text-bone">
-           — {profile.fullName}
-          </p>
-
+  
           <motion.dl
             className="mt-10 grid gap-px overflow-hidden rounded-xl bg-white/10 sm:grid-cols-2"
             initial="hidden"

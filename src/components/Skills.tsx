@@ -11,9 +11,10 @@ const ACCENT = '#ff3d5a';
 
 const CATEGORY_TITLES = [
   'Networking & Infrastructure',
-  'Cybersecurity & Network Analysis',
   'IT Support & Troubleshooting',
-  'Systems & Technical Tools',
+  'Cybersecurity & Network Analysis',
+  'OTA & Business Operations',
+  'Systems & Technical Tools'
 ];
 
 export default function Skills() {
@@ -86,9 +87,6 @@ export default function Skills() {
             >
               <div className="mb-6 flex items-end justify-between gap-4 border-b border-white/10 pb-4">
                 <div>
-                  <p className="mb-2 text-[10px] font-bold uppercase tracking-[0.25em] text-[#ff3d5a]">
-                    Technical discipline
-                  </p>
 
                   <h3 className="font-display text-2xl tracking-wide text-bone sm:text-3xl">
                     {CATEGORY_TITLES[cat] || category.title}

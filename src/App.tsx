@@ -13,7 +13,7 @@ import Skills from './components/Skills';
 import FinalCTA from './components/FinalCTA';
 import PlayIntro from './components/PlayIntro';
 import { EASE } from './components/fx';
-import type { Project } from './data/portfolio';
+import { experience, type Project } from './data/portfolio';
 
 export default function App() {
   return (
@@ -37,11 +37,10 @@ function Portfolio() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, ease: EASE }}
       >
-  
         <Navbar
-         order={['about', 'journey', 'originals', 'skills', 'story']}
+          order={['about', 'journey', 'originals', 'skills', 'story']}
           profileId="mohit"
-         onSwitch={() => {}}
+          onSwitch={() => {}}
         />
 
         <main>
@@ -49,7 +48,7 @@ function Portfolio() {
             onPlay={() => setShowIntro(true)}
             onResume={() => {
               window.open(
-                '/assets/Mohit_Budhathoki_CV.pdf',
+                '/assets/cv.pdf',
                 '_blank',
                 'noopener,noreferrer'
               );
@@ -72,71 +71,81 @@ function Portfolio() {
                   Experience
                 </h2>
 
-                <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8">
-                  <h3 className="text-xl font-semibold">
-                    Network Technician
-                  </h3>
+                <div className="space-y-6">
+                  {experience.map((job, index) => {
+                    const isBarahi =
+                      job.company === 'Barahi Hospitality and Leisure';
 
-                  <p className="mt-1 text-sm text-gray-400">
-                    Lavish Technology Pvt. Ltd. · Kathmandu, Nepal
-                  </p>
+                    // Show Barahi only once.
+                    if (isBarahi && index > 0) {
+                      const previousJob = experience[index - 1];
 
-                  <p className="mt-1 text-sm text-gray-400">
-                    October 2025 – Present
-                  </p>
+                      if (previousJob.company === job.company) {
+                        return null;
+                      }
+                    }
 
-                  <ul className="mt-5 list-disc space-y-2 pl-5 text-gray-300">
-                    <li>
-                      Configure, maintain, and troubleshoot network
-                      infrastructure, including routers, switches,
-                      and wireless access points.
-                    </li>
-                    <li>
-                      Diagnose connectivity and hardware issues
-                      across LAN, WAN, and Wi-Fi environments.
-                    </li>
-                    <li>
-                      Support network installations, structured
-                      cabling, equipment upgrades, and fault finding.
-                    </li>
-                    <li>
-                      Assist with IP addressing, DHCP, DNS, and
-                      baseline network security settings.
-                    </li>
-                    <li>
-                      Maintain technical documentation and
-                      collaborate with senior network engineers.
-                    </li>
-                  </ul>
-                </div>
+                    // Group both Barahi positions together.
+                    const companyJobs = isBarahi
+                      ? experience.filter(
+                          (item) => item.company === job.company
+                        )
+                      : [job];
 
-                <div className="mt-6 rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8">
-                  <h3 className="text-xl font-semibold">
-                    On-the-Job Trainee — OTA Department
-                  </h3>
+                    return (
+                      <div
+                        key={job.company}
+                        className="rounded-2xl border border-white/10 bg-white/[0.03] p-6 sm:p-8"
+                      >
+                        {/* Company name and overall employment dates */}
+                        <div className="flex flex-wrap items-center justify-between gap-3">
+                          <h3 className="text-xl font-semibold">
+                            {job.company}
+                          </h3>
 
-                  <p className="mt-1 text-sm text-gray-400">
-                    Barahi Hospitality and Leisure · Kathmandu, Nepal
-                  </p>
+                          <span className="text-sm text-gray-400">
+                            {isBarahi
+                              ? 'March 2025 – August 2026'
+                              : job.period}
+                          </span>
+                        </div>
 
-                  <p className="mt-1 text-sm text-gray-400">
-                    March 2025 – September 2025
-                  </p>
+                        <p className="mt-1 text-sm text-gray-400">
+                          {job.place}
+                        </p>
 
-                  <ul className="mt-5 list-disc space-y-2 pl-5 text-gray-300">
-                    <li>
-                      Managed reservations and inventory information
-                      across online travel agency platforms.
-                    </li>
-                    <li>
-                      Coordinated with internal teams to resolve
-                      booking discrepancies and maintain accuracy.
-                    </li>
-                    <li>
-                      Prepared sales reports and performed
-                      rate-parity checks using Excel.
-                    </li>
-                  </ul>
+                        {/* Job positions */}
+                        <div className="mt-6 space-y-6">
+                          {companyJobs.map((position, positionIndex) => (
+                            <div
+                              key={position.role}
+                              className={
+                                positionIndex > 0
+                                  ? 'border-t border-white/10 pt-6'
+                                  : ''
+                              }
+                            >
+                             <h4 className="text-lg font-semibold">
+  {position.role}
+</h4>
+
+          {position.role.includes('On-the-Job Trainee') && (
+  <p className="mt-1 text-sm text-gray-400">
+    6-Month  Training Programme
+  </p>
+)}
+
+                              <ul className="mt-4 list-disc space-y-2 pl-5 text-gray-300">
+                                {position.points.map((point) => (
+                                  <li key={point}>{point}</li>
+                                ))}
+                              </ul>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </div>
             </section>
@@ -152,7 +161,6 @@ function Portfolio() {
 
           <Scene id="contact">
             <FinalCTA />
-      
           </Scene>
         </main>
       </motion.div>

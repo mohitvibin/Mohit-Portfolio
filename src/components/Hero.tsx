@@ -37,8 +37,7 @@ export default function Hero({ onPlay, onResume, profileId }: { onPlay: () => vo
   const glowX = useTransform(px, [-1, 1], ['-6%', '6%']);
 
   const meta = [
-  'October 2025 – Present',
-  'BSC (Honours) in Computing',
+  'Bachelor of Engineering (Honours) in Computing',
 ];
 
   const floating = [
@@ -140,15 +139,6 @@ export default function Hero({ onPlay, onResume, profileId }: { onPlay: () => vo
           {profile.seriesTag}
         </motion.p>
 
-        <motion.div variants={item} className="mt-5 flex flex-wrap items-center gap-x-3 gap-y-2 text-[13px] font-medium text-mist">
-          <span className="rounded border border-white/25 px-1.5 py-px text-[10px] font-bold tracking-wider text-bone">Network Technician</span>
-          {meta.map((m, i) => (
-            <span key={m} className="flex items-center gap-3">
-              {i > 0 && <span className="h-1 w-1 rounded-full bg-smoke" />}
-              {m}
-            </span>
-          ))}
-        </motion.div>
 
         <motion.p variants={item} className="mt-4 text-[10px] font-semibold uppercase tracking-[0.2em] text-bone/90 sm:text-xs sm:tracking-[0.34em]">
           {profile.tagline.join(' • ')}
@@ -170,9 +160,9 @@ export default function Hero({ onPlay, onResume, profileId }: { onPlay: () => vo
             </button>
           </Magnetic>
           <Magnetic>
-            {profileId === 'recruiter' ? (
+            {true ? (
               <button type="button" onClick={onResume} className="glass flex min-h-12 items-center gap-3 rounded-md px-6 py-3 text-[15px] font-semibold text-bone transition hover:bg-white/15 sm:px-8">
-                <span className="text-lg">⤓</span> View Resume
+                <span className="text-lg">⤓</span> Download CV
               </button>
             ) : (
               <button

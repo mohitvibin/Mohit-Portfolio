@@ -17,14 +17,14 @@ export const profile = {
   tagline: [
     'Network Infrastructure',
     'Security Fundamentals',
-    'Technical Support',
+  
   ],
 
   intro:
-    'I am a Network Technician specializing in network infrastructure, configuration, and troubleshooting, with a growing focus on cybersecurity and network defense.',
-
-    about: 
-    'I am a Network Technician with hands-on experience in network infrastructure, configuration, maintenance, and troubleshooting. With an academic background in Computing, specializing in Computer Network Engineering, I have developed a strong foundation in network operations, technical support, and cybersecurity fundamentals. I am continually expanding my expertise in cybersecurity, network traffic analysis, and digital forensics, with a particular interest in vulnerability assessment, threat investigation, and strengthening network security.',
+    'I am a Network Technician with practical experience in network infrastructure, configuration, and troubleshooting, alongside a growing interest in cybersecurity and hands-on security learning. I also have professional experience in Online Travel Agency (OTA) operations, including reservation management, guest coordination, inventory updates, rate-parity checks, and sales reporting.',
+   
+  about:
+  'With a Bachelor of Engineering (Honours) in Computing, majoring in Computer Networks Engineering, I have developed a strong foundation in networking, infrastructure, configuration, and troubleshooting. I am also building my cybersecurity knowledge through hands-on learning with Kali Linux, TryHackMe, and Wireshark.\n\nBeyond technology, I have professional experience in OTA operations, including reservation management, guest coordination, inventory updates, rate-parity checks, and sales reporting. I enjoy solving problems, exploring new technologies, and continuously developing my skills.',
 
 
   location: 'Kathmandu, Nepal',
@@ -71,33 +71,47 @@ export const education = [
   },
 ];
 
+
 export const experience = [
   {
     company: 'Lavish Technology Pvt. Ltd.',
     role: 'Network Technician',
     place: 'Kathmandu, Nepal',
-    period: 'October 2025 – Present',
+    period: 'September 2026 – Present',
     points: [
-      'Deploy, configure and maintain network infrastructure, including routers, switches, access points and modems for client sites and user workstations.',
-      'Monitor network performance and troubleshoot connectivity, hardware and configuration faults across LAN, WAN and Wi-Fi environments.',
-      'Configure and maintain IP addressing, DHCP, DNS and baseline network security settings.',
+      'Deploy, configure and maintain routers, switches, access points and modems at client sites and user workstations.',
+      'Monitor network performance and troubleshoot connectivity, hardware and configuration faults across LAN, WAN and Wi-Fi.',
+      'Configure IP addressing, DHCP, DNS and baseline network security settings.',
       'Perform structured cabling, termination, testing and fault-finding.',
       'Support the installation, upgrade and replacement of networking equipment.',
-      'Document network configurations, equipment inventory and troubleshooting activity, and escalate complex issues to senior engineers.',
+      'Document network configurations, equipment inventory and troubleshooting activity.',
+      'Escalate complex issues to senior IT and network engineers and collaborate on resolution.',
     ],
   },
   {
     company: 'Barahi Hospitality and Leisure',
-    role: 'On-the-Job Trainee — OTA Department',
+    role: 'OTA Associate – Sales and Marketing',
+    place: 'Kathmandu, Nepal',
+    period: 'October 2025 – August 2026',
+    points: [
+      'Oversaw OTA operations across the properties under Barahi Hospitality & Leisure.',
+      'Managed OTA extranet updates, including availability, stop-sells and inventory, to keep listings accurate and bookable.',
+      'Conducted daily multi-channel rate-parity audits.',
+      'Prepared Excel sales reports for pricing review.',
+    ],
+  },
+  {
+    company: 'Barahi Hospitality and Leisure',
+    role: 'On-the-Job Trainee – OTA Marketing & Communication',
     place: 'Kathmandu, Nepal',
     period: 'March 2025 – September 2025',
     points: [
-      'Supported online travel agency operations, reservations, rate and inventory management, and guest communication.',
-      'Resolved booking discrepancies with internal teams and OTA partners while maintaining accurate listings and reservation records.',
-      'Updated OTA extranets, checked rate parity and prepared sales reports using Excel.',
+      'Processed reservations from OTA platforms and direct sales calls, ensuring accurate data entry and confirmation in the property management system.',
+      'Worked with internal teams and OTA partners to resolve booking discrepancies and maintain listing accuracy.',
     ],
   },
 ];
+
 
 export type Metric = { value: string; label: string };
 
@@ -277,7 +291,27 @@ export const skillCategories: SkillCategory[] = [
       { name: 'Network Security Fundamentals', mono: 'NS' },
     ],
   },
+
   {
+    id: 'professional',
+  title: 'Professional, OTA & Business Operations',
+  subtitle: 'Hospitality operations, business coordination and professional competencies',
+  skills: [
+    { name: 'OTA Channel & Extranet Management', mono: 'OTA' },
+    { name: 'Reservation & Booking Management', mono: 'RM' },
+    { name: 'Inventory & Availability Control', mono: 'IA' },
+    { name: 'Multi-Channel Rate Parity Auditing', mono: 'RP' },
+    { name: 'Sales Performance Reporting', mono: 'SR' },
+    { name: 'Guest Relations & Coordination', mono: 'GC' },
+    { name: 'Property Management System (PMS)', mono: 'PMS' },
+    { name: 'Analytical & Critical Thinking', mono: 'AT' },
+    { name: 'Technical Communication', mono: 'TC' },
+    { name: 'Cross-Functional Collaboration', mono: 'CF' },
+    { name: 'Problem Solving & Decision Making', mono: 'PS' },
+    { name: 'Technical Documentation', mono: 'TD' },
+  ],
+},
+ {
     id: 'tools',
     title: 'Systems & Technical Tools',
     subtitle: 'Operating systems and networking tools',
@@ -288,18 +322,6 @@ export const skillCategories: SkillCategory[] = [
       { name: 'VMware Fusion', mono: 'VM' },
       { name: 'Command-Line Fundamentals', mono: 'CLI' },
       { name: 'Technical Documentation', mono: 'TD' },
-    ],
-  },
-  {
-    id: 'professional',
-    title: 'Professional Skills',
-    subtitle: 'Reliable technical support and collaboration',
-    skills: [
-      { name: 'Analytical Problem Solving', mono: 'AP' },
-      { name: 'Technical Communication', mono: 'TC' },
-      { name: 'Documentation & Reporting', mono: 'DR' },
-      { name: 'Team Collaboration', mono: 'TM' },
-      { name: 'Continuous Learning', mono: 'CL' },
     ],
   },
 ];
