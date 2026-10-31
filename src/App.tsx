@@ -53,7 +53,6 @@ function Portfolio() {
                 'noopener,noreferrer'
               );
             }}
-            profileId="mohit"
           />
 
           <Scene id="about">
